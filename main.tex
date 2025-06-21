@@ -1,0 +1,124 @@
+\documentclass{article}
+
+\def\TemplatePath{./}
+\input{./template.tex}
+
+%\usepackage{biblatex}
+%\addbibresource{src/references.bib}
+
+\def\MyClass{Introducción a la Teoria de Conjuntos}
+\def\MyTitle{Examen 2 -- Punto 3}
+\def\MyAuthor{Martín Steven Hernández Ortiz}
+\def\MyEmail{mahernandezor@unal.edu.co}
+\def\MyDate{\today}
+
+\begin{document}
+\maketitle
+
+\begin{itemize} 
+    \item Muestre de manera explicita un subconjunto de \(\realR{}\) con el orden usual de \(\realR{}\) \(\left(<\right)\) que tenga el mismo tipo de orden que \(\omega^{3}\). \\
+        Debemos mostrar que existe un \(R \subset \realR\) tal que exista un isomorfismo de orden entre \(\omega^3\) y \(R\).
+        \\
+        \textbf{Respuesta: } 
+        Tomando la serie geometrica 
+        \(
+            \sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}
+        \), 
+        donde \(\left|r\right| < 1\) y \(k \in \realR\). Tal que para, \(k = 1, r = \frac{1}{2}\), se tiene que \(\sum_{n=0}^{\infty}\frac{1}{2^n} = \frac{1}{1 - \frac{1}{2}} = 2\).
+        Ahora, sean las funciones \(f_1: \realN \rightarrow \realR, f_2: \realN \rightarrow \realR, f_3: \realN \rightarrow \realR\), tales que 
+        \[
+            \begin{aligned}
+                f_1(a) = \sum_{n=0}^{a} \left(\frac{1}{2}\right){}^{n} &
+                \hspace{0.5cm}
+                f_2(b) = \sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} &
+                \hspace{0.5cm}
+                f_3(c) = \sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n}
+            \end{aligned}
+        \]
+        Veamos que para \(i = 1, 2, 3\), si \(d_1, d_2 \in \realN\) tales que \(d_1 < d_2\), se va a tener que \(f_i(d_1) < f_i(d_2)\).
+        Luego, como \(0 = \text{mín}\left(\realN\right)\), vamos a tener que para todo \(d \in \realN\), \(f_i(0) \leq f_i(d)\). 
+        Además también se va a tener que 
+        \[
+            \begin{aligned}
+                \lim_{a \rightarrow \infty} f_1(a) = \lim_{a \rightarrow \infty}\sum_{n=0}^{a} \frac{1}{2^{n}} = 2&
+                \hspace{0.25cm}
+                \lim_{b \rightarrow \infty} f_2(b) = \lim_{b \rightarrow \infty}\sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} = 6
+                \hspace{0.25cm}
+                \lim_{c \rightarrow \infty} f_3(c) = \lim_{c \rightarrow \infty}\sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n} = 20
+            \end{aligned}
+        \]
+        Entonces vamos a poder acotar cada función, tal que para todo \(m \in \realN\) 
+        \[
+            \begin{aligned}
+                1 \leq f_1(m) < 2 &
+                \hspace{0.5cm}
+                3 \leq f_2(m) < 6 &
+                \hspace{0.5cm}
+                10 \leq f_3(m) < 20
+            \end{aligned}
+        \]
+        Ahora, veamos que para todo \(m' \in \realN\) tal que \(m' > 0\),
+        \[
+            \begin{aligned}
+                14 < f_1(m') + f_2(0) + f_3(0) < 15, &
+                \hspace{0.5cm}
+                15 < f_1(0) + f_2(m') + f_3(0) < 17, \\
+                \hspace{0.5cm}
+                17 < f_1(m') + f_2(m') + f_3(0) < 18, &
+                \hspace{0.5cm}
+                18 < f_1(0) + f_2(0) + f_3(m') < 23, \\
+                \hspace{0.5cm}
+                23 < f_1(m') + f_2(0) + f_3(m') < 25, &
+                \hspace{0.5cm}
+                25 < f_1(0) + f_2(m') + f_3(m') < 27, \\
+            \end{aligned}
+        \]
+        \vspace{-0.25cm}
+        \[
+                \text{y } 27 < f_1(m') + f_2(m') + f_3(m') < 28
+        \]
+        Ahora, definamos al conjunto \(R\), como \(R := \left\{f_1(i) + f_2(j) + f_3(l): i, j, l \in \realN \right\}\). 
+        Es sencillo ver que \(R \subset \realR\) ya que \(\text{Im}(f_i) \subset \realR\) para \(i = 1, 2, 3\). 
+        Ahora, sea una función \(\phi: \omega^3 \rightarrow R\), definida como
+        \[
+            \phi(\alpha, \beta, \gamma) = f_1(\alpha) + f_2(\beta) + f_3(\gamma)
+        \]
+        veamos que \(\phi\) es un isomorfismo entre \(\omega^3\) y \(R\).
+        \ResetCases{}
+        \begin{mathcase}{\(\phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\)}
+            \vspace{-0.4cm}
+            Primero, veamos que \(\phi\) es una función creciente, sean ordinales cualesquiera tales que,
+            \((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\). Veamos que, como \(f_1, f_2, f_3\) son funciones crecientes, 
+            \[
+                \begin{aligned}
+                    \phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) &=
+                    (f_1(\alpha_2) + f_2(\beta_2) + f_3(\gamma_2)) + (- f_1(\alpha_1) - f_2(\beta_1) - f_3(\gamma_1)) \\
+                    &= (f_1(\alpha_2) - f_1(\alpha_1)) + (f_2(\beta_2) - f_2(\beta_1)) + (f_3(\gamma_2) - f_3(\gamma_1)) \\
+                    &> 0 + 0 + 0 = 0
+                \end{aligned}
+            \]
+            Como \(\phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) > 0\), entonces \(\phi(\alpha_2, \beta_2, \gamma_2) > \phi(\alpha_1, \beta_2, \gamma_1)\).
+            De manera analoga se puede probar que \(phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\).
+        \end{mathcase}
+        \begin{mathcase}{\(\phi\) es inyectiva}
+            \vspace{-0.4cm}
+            Si 
+            \(
+                (\alpha_1, \beta_1, \gamma_1) \neq (\alpha_2, \beta_2, \gamma_2) 
+            \), 
+            sin perdida de la generalidad, veamos que \((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\), 
+            entonces, como \(f_1, f_2\), \(f_3\) y \(\phi\) son crecientes,
+            se tiene que \(\phi(\alpha_1, \beta_1, \gamma_1) < \phi(\alpha_2, \beta_2, \gamma_2)\), 
+            y \(\phi(\alpha_1, \beta_1, \gamma_1) \neq \phi(\alpha_2, \beta_2, \gamma_2)\).
+            Es decir, \(\phi\) es inyectiva
+        \end{mathcase}
+        \begin{mathcase}{\(\phi\) es sobreyectiva}
+            \vspace{-0.4cm}
+            Tome cualquier \(r \in R\), por definición de \(R\) existen \(i, j, l \in \realN\) tales que \(r = f_1(i) + f_2(j) + f_3(l)\),
+            como \(\realN = \omega\), entonces \(i, j, l \in \omega\). Luego, \((i,j,l) \in \omega^3\) y por definición de \(phi\), 
+            \(\phi(i, j, l) = f_1(i) + f_2(j) + f_3(l) = r\). Es decir, \(\phi\) es sobreyectiva.
+        \end{mathcase}
+        Concluyendo que \(\phi\) es un isomorfismo de orden entre \(\omega^3\) y \(R\), donde \(R \subset \realR\).
+\end{itemize}
+
+\end{document}
