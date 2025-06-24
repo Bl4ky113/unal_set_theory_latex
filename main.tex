@@ -17,108 +17,255 @@
 
 \begin{itemize} 
     \item Muestre de manera explicita un subconjunto de \(\realR{}\) con el orden usual de \(\realR{}\) \(\left(<\right)\) que tenga el mismo tipo de orden que \(\omega^{3}\). \\
-        Debemos mostrar que existe un \(R \subset \realR\) tal que exista un isomorfismo de orden entre \(\omega^3\) y \(R\).
+        Debemos mostrar que existe un \(R \subset \realR\) tal que exista un isomorfismo de orden entre \(\omega^3\) y \(R\). 
         \\
         \textbf{Respuesta: } 
-        Tomando la serie geometrica 
-        \(
-            \sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}
-        \), 
-        donde \(\left|r\right| < 1\) y \(k \in \realR\). Tal que para, \(k = 1, r = \frac{1}{2}\), se tiene que \(\sum_{n=0}^{\infty}\frac{1}{2^n} = \frac{1}{1 - \frac{1}{2}} = 2\).
-        Ahora, sean las funciones \(f_1: \realN \rightarrow \realR, f_2: \realN \rightarrow \realR, f_3: \realN \rightarrow \realR\), tales que 
+        Tomando la serie geometrica y las funciones \(s_i: \omega \rightarrow \realR\)
+        \[
+            \sum_{i=0}^{\infty} kr^i = \frac{k}{1-r} 
+            \hspace{1cm}
+            k_{i} \leq s_i(n) = \sum_{i=0}^{n} k_{i}r_i^n < \frac{k_{i}}{1-r_i}
+        \] 
+        donde \(\left|r\right| < 1\), \(k \in \realR\) y \(0 < r_i < 1\), \(k_i > 0\), para todo \(n\) natural. Inicialmente, definimos las cotas de una función \(s_i\) como 
+        \(\sigma_i \leq s_i(n) < \Theta\), para todo \(n\) natural.
+        Ahora, veamos que apartir de unas funciones \(s_1, s_2, s_3\) tales que \(s_1(n) < s_2(n) < s_3(n)\), para todo \(n\) natural;
+        se tiene una función \(\phi: \omega^3 \rightarrow R\), donde \(R\) es el intervalo de las cotas superiores e inferiores de las funciones \(s_i\), 
+        es decir, \(R = \left[\sigma_1 + \sigma_2 + \sigma_3, \Theta_1 + \Theta_2 + \Theta_3\right)\). Y se define a \(\phi\) como
+        \[
+            \sigma_1 + \sigma_2 + \sigma_3 \leq \phi(n_1, n_2, n_3) = s_1(n_1) + s_2(n_2) + s_3(n_3) < \Theta_1 + \Theta_2 + \Theta_3
+        \]
+        Ahora, para que \(Im(\phi)\) cumpla con el orden lexicográfico, entonces se debe cumplir que para todo \(m > 1\) natural.
         \[
             \begin{aligned}
-                f_1(a) = \sum_{n=0}^{a} \left(\frac{1}{2}\right){}^{n} &
-                \hspace{0.5cm}
-                f_2(b) = \sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} &
-                \hspace{0.5cm}
-                f_3(c) = \sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n}
+                &s_1(0) + s_2(0) + s_3(0)& <& &s_1(1) + s_2(0) + s_3(0)& <& &s_1(m) + s_2(0) + s_3(0)& <\\
+                &s_1(0) + s_2(1) + s_3(0)& <& &s_1(0) + s_2(m) + s_3(0)& <& &s_1(1) + s_2(m) + s_3(0)& <\\
+                &s_1(m) + s_2(m) + s_3(0)& <& &s_1(0) + s_2(0) + s_3(1)& <& &s_1(0) + s_2(0) + s_3(m)& <\\
+                &s_1(1) + s_2(0) + s_3(m)& <& &s_1(m) + s_2(0) + s_3(m)& <& &s_1(0) + s_2(1) + s_3(m)& <\\
+                &s_1(0) + s_2(m) + s_3(m)& <& &s_1(1) + s_2(m) + s_3(m)& <& &s_1(m) + s_2(m) + s_3(m)& \\
             \end{aligned}
         \]
-        Veamos que para \(i = 1, 2, 3\), si \(d_1, d_2 \in \realN\) tales que \(d_1 < d_2\), se va a tener que \(f_i(d_1) < f_i(d_2)\).
-        Luego, como \(0 = \text{mín}\left(\realN\right)\), vamos a tener que para todo \(d \in \realN\), \(f_i(0) \leq f_i(d)\). 
-        Además también se va a tener que 
+        Note que, cuando \(m\) tiende al infinito podemos reemplazar a \(s_i(0) = \sigma_i\) y \(s_i(m) = \Theta_i\), para \(i = 1, 2, 3\). 
+        Y se va notar cada valor de la desigualdad como \(d_i\), para el \(i\)-ésimo valor. 
+        (Ejemplo \(d_1 = \sigma_1 + \sigma_2 + \sigma_3\) y \(d_3 = \Theta_1 + \sigma_2 + \sigma_3\)). 
         \[
             \begin{aligned}
-                \lim_{a \rightarrow \infty} f_1(a) = \lim_{a \rightarrow \infty}\sum_{n=0}^{a} \frac{1}{2^{n}} = 2&
-                \hspace{0.25cm}
-                \lim_{b \rightarrow \infty} f_2(b) = \lim_{b \rightarrow \infty}\sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} = 6
-                \hspace{0.25cm}
-                \lim_{c \rightarrow \infty} f_3(c) = \lim_{c \rightarrow \infty}\sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n} = 20
+                &\overbrace{\sigma_1 + \sigma_2 + \sigma_3}^{d_1}& <& &s_1(1) + \sigma_2 + \sigma_3& <& &\Theta_1 + \sigma_2 + \sigma_3& <\\
+                &\sigma_1 + s_2(1) + \sigma_3& <& &\sigma_1 + \Theta_2 + \sigma_3& <& &s_1(1) + \Theta_2 + \sigma_3& <\\
+                &\Theta_1 + \Theta_2 + \sigma_3& <& &\sigma_1 + \sigma_2 + s_3(1)& <& &\sigma_1 + \sigma_2 + \Theta_3& <\\
+                &s_1(1) + \sigma_2 + \Theta_3& <& &\Theta_1 + \sigma_2 + \Theta_3& <& &\sigma_1 + s_2(1) + \Theta_3& <\\
+                &\sigma_1 + \Theta_2 + \Theta_3& <& &s_1(1) + \Theta_2 + \Theta_3& <& &\underbrace{\Theta_1 + \Theta_2 + \Theta_3}_{d_{15}}& \\
             \end{aligned}
         \]
-        Entonces vamos a poder acotar cada función, tal que para todo \(m \in \realN\) 
-        \[
-            \begin{aligned}
-                1 \leq f_1(m) < 2 &
-                \hspace{0.5cm}
-                3 \leq f_2(m) < 6 &
-                \hspace{0.5cm}
-                10 \leq f_3(m) < 20
-            \end{aligned}
-        \]
-        Ahora, veamos que para todo \(m' \in \realN\) tal que \(m' > 0\),
-        \[
-            \begin{aligned}
-                14 < f_1(m') + f_2(0) + f_3(0) < 15, &
-                \hspace{0.5cm}
-                15 < f_1(0) + f_2(m') + f_3(0) < 17, \\
-                \hspace{0.5cm}
-                17 < f_1(m') + f_2(m') + f_3(0) < 18, &
-                \hspace{0.5cm}
-                18 < f_1(0) + f_2(0) + f_3(m') < 23, \\
-                \hspace{0.5cm}
-                23 < f_1(m') + f_2(0) + f_3(m') < 25, &
-                \hspace{0.5cm}
-                25 < f_1(0) + f_2(m') + f_3(m') < 27, \\
-            \end{aligned}
-        \]
-        \vspace{-0.25cm}
-        \[
-                \text{y } 27 < f_1(m') + f_2(m') + f_3(m') < 28
-        \]
-        Ahora, definamos al conjunto \(R\), como \(R := \left\{f_1(i) + f_2(j) + f_3(l): i, j, l \in \realN \right\}\). 
-        Es sencillo ver que \(R \subset \realR\) ya que \(\text{Im}(f_i) \subset \realR\) para \(i = 1, 2, 3\). 
-        Ahora, sea una función \(\phi: \omega^3 \rightarrow R\), definida como
-        \[
-            \phi(\alpha, \beta, \gamma) = f_1(\alpha) + f_2(\beta) + f_3(\gamma)
-        \]
-        veamos que \(\phi\) es un isomorfismo entre \(\omega^3\) y \(R\).
+        Verifiquemos que propiedades deben cumplir \(s_1, s_2, s_3\) para que \(\fim{\phi}\) cumpla con el orden lexicográfico verificando que propiedades 
+        se tiene para cada intervalo \(d_i < d_{i + 1}\), para \(i = 1, \ldots, 14\).
+        \begin{align}
+            d_1 < d_2       &\Rightarrow \sigma_1 + \sigma_2 + \sigma_3 < s_1(1) + \sigma_2 + \sigma_3     &\Rightarrow& \sigma_1 < s_1(1)                            \tag{1}\label{eq-1} \\
+            d_2 < d_3       &\Rightarrow s_1(1) + \sigma_2 + \sigma_3   < \Theta_1 + \sigma_2 + \sigma_3   &\Rightarrow& s_1(1) < \Theta_1                            \tag{2}\label{eq-2} \\
+            d_3 < d_4       &\Rightarrow \Theta_1 + \sigma_2 + \sigma_3 < \sigma_1 + s_2(1) + \sigma_3     &\Rightarrow& \Theta_1 + \sigma_2 < \sigma_1 + s_2(1)      \tag{3}\label{eq-3} \\
+            d_4 < d_5       &\Rightarrow \sigma_1 + s_2(1) + \sigma_3   < \sigma_1 + \Theta_2 + \sigma_3   &\Rightarrow& s_2(1) < \Theta_2                            \tag{4}\label{eq-4}\\
+            d_5 < d_6       &\Rightarrow \sigma_1 + \Theta_2 + \sigma_3 < s_1(1) + \Theta_2 + \sigma_3     &\Rightarrow& \sigma_1 < s_1(1)                            \tag{1}\label{repeated-1} \\
+            d_6 < d_7       &\Rightarrow s_1(1) + \Theta_2 + \sigma_3   < \Theta_1 + \Theta_2 + \sigma_3   &\Rightarrow& s_1(1) < \Theta_1                            \tag{2}\label{repeated-2} \\
+            d_7 < d_8       &\Rightarrow \Theta_1 + \Theta_2 + \sigma_3 < \sigma_1 + \sigma_2 + s_3(1)     &\phantom{\Rightarrow}&                                    \tag{5}\label{eq-5} \\ 
+            d_8 < d_9       &\Rightarrow \sigma_1 + \sigma_2 + s_3(1)   < \sigma_1 + \sigma_2 + \Theta_3   &\Rightarrow& s_3(1) < \Theta_3                            \tag{6}\label{eq-6} \\
+            d_9 < d_{10}    &\Rightarrow \sigma_1 + \sigma_2 + \Theta_3 < s_1(1) + \sigma_2 + \Theta_3     &\Rightarrow& \sigma_1 < s_1(1)                            \tag{1}\label{repeated-1-2} \\
+            d_{10} < d_{11} &\Rightarrow s_1(1) + \sigma_2 + \Theta_3   < \Theta_1 + \sigma_1 + \Theta_3   &\Rightarrow& s_1(1) < \Theta_1                            \tag{2}\label{repeated-2-2} \\
+            d_{11} < d_{12} &\Rightarrow \Theta_1 + \sigma_2 + \Theta_3 < \sigma_1 + s_2(1) + \Theta_3     &\Rightarrow& \Theta_1 + \sigma_2 < \sigma_1 + s_2(1)      \tag{3}\label{repeated-3} \\
+            d_{12} < d_{13} &\Rightarrow \sigma_1 + s_2(1) + \Theta_3   < \sigma_1 + \Theta_2 + \Theta_3   &\Rightarrow& s_2(1) < \Theta_2                            \tag{4}\label{repeated-4} \\
+            d_{13} < d_{14} &\Rightarrow \sigma_1 + \Theta_2 + \Theta_3 < s_1(1) + \Theta_2 + \Theta_3     &\Rightarrow& \sigma_1 < s_1(1)                            \tag{1}\label{repeated-1-3} \\
+            d_{14} < d_{15} &\Rightarrow s_1(1) + \Theta_2 + \Theta_3   < \Theta_1 + \Theta_2 + \Theta_3   &\Rightarrow& s_1(1) < \Theta_1                            \tag{2}\label{repeated-2-3}
+        \end{align}
+        Note que es solo es necesario verificar los intervalos \(d_i < d_{i+1}\) ya que por la linealidad, de tanto, del orden lexicográfico y del orden en \(\realR\)
+        se va a tener que \(d_1 < d_2 < \cdots < d_{14} < d_{15}\). Después de verificar cada intervalo, se obtienen las siguientes propiedades \\
+        \vspace{-5ex}
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item \(\sigma_1 < s_1(1)\)~\eqref{eq-1}
+                \item \(s_1(1) < \Theta_1\)~\eqref{eq-2}
+                \item \(\Theta_1 + \sigma_2 < \sigma_1 + s_2(1)\)~\eqref{eq-3}
+                \item \(s_2(1) < \Theta_2\)~\eqref{eq-4}
+                \item \(\Theta_1 + \Theta_2 + \sigma_3 < \sigma_1 + \sigma_2 + s_3(1)\)~\eqref{eq-5}
+                \item \(s_3(1) < \Theta_3\)~\eqref{eq-6}
+            \end{itemize}
+        \end{multicols}
+        Note que las propiedades~\eqref{eq-1},\eqref{eq-2},\eqref{eq-4},\eqref{eq-6} se tienen si \(s_1, s_2, s_3\) son funciones crecientes. 
+        Lo cual no es difícil de verificar ya que las funciones \(s_i\) se definen apartir de una serie geométrica. 
+        Sin embargo, las propiedades~\eqref{eq-3} y~\eqref{eq-5} son las propiedades importantes que deben cumplir \(s_1, s_2, s_3\) para que \(\fim{\phi}\) cumpla con el orden lexicográfico de \(\omega^3\).
+        \\
+        Asumiendo que \(s_1, s_2, s_3\) cumplen estas propiedades, vamos a tener que \(\phi\) es una función creciente tal que \(\fim{\phi}\) respeta el orden lexicográfico, es decir es un homomorfismo de orden. 
+        Sin embargo, nos hace ver que sea una función biyectiva entre \(\omega^3\) a \(\realR\).
         \ResetCases{}
-        \begin{mathcase}{\(\phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\)}
-            \vspace{-0.4cm}
-            Primero, veamos que \(\phi\) es una función creciente, sean ordinales cualesquiera tales que,
-            \((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\). Veamos que, como \(f_1, f_2, f_3\) son funciones crecientes, 
-            \[
-                \begin{aligned}
-                    \phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) &=
-                    (f_1(\alpha_2) + f_2(\beta_2) + f_3(\gamma_2)) + (- f_1(\alpha_1) - f_2(\beta_1) - f_3(\gamma_1)) \\
-                    &= (f_1(\alpha_2) - f_1(\alpha_1)) + (f_2(\beta_2) - f_2(\beta_1)) + (f_3(\gamma_2) - f_3(\gamma_1)) \\
-                    &> 0 + 0 + 0 = 0
-                \end{aligned}
-            \]
-            Como \(\phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) > 0\), entonces \(\phi(\alpha_2, \beta_2, \gamma_2) > \phi(\alpha_1, \beta_2, \gamma_1)\).
-            De manera analoga se puede probar que \(phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\).
-        \end{mathcase}
         \begin{mathcase}{\(\phi\) es inyectiva}
-            \vspace{-0.4cm}
-            Si 
-            \(
-                (\alpha_1, \beta_1, \gamma_1) \neq (\alpha_2, \beta_2, \gamma_2) 
-            \), 
-            sin perdida de la generalidad, veamos que \((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\), 
-            entonces, como \(f_1, f_2\), \(f_3\) y \(\phi\) son crecientes,
-            se tiene que \(\phi(\alpha_1, \beta_1, \gamma_1) < \phi(\alpha_2, \beta_2, \gamma_2)\), 
-            y \(\phi(\alpha_1, \beta_1, \gamma_1) \neq \phi(\alpha_2, \beta_2, \gamma_2)\).
-            Es decir, \(\phi\) es inyectiva
+            \vspace{-3ex}
+            Sean \(x = (\alpha, \beta, \gamma), x' = (\alpha', \beta', \gamma') \in \omega^3\), si \(x \neq x'\), 
+            entonces existen almenos dos elementos de las triplas, \(x_i \in x, x'_i \in x'\) tales que \(x_i \neq x'_i\).
+            Sin perdida de la generalidad, por tricotomía en los ordinales, \(x_i < x'_i\), entonces \(s_i(x_i) < s_i(x'_i)\).
+            Luego, si \(\phi(x) = \phi(x')\), entonces \(s_1(\alpha) + s_2(\beta) + s_3(\gamma) = s_1(\alpha') + s_2(\beta') + s_3(\gamma')\), 
+            pero como \(x_i\) y \(x'_i\) son algún elemento en las triplas, sin perdida de la generalidad, si \(x_i = \alpha\) y \(x'_i = \alpha'\),
+            se va a tener que \(\phi(x) = s_1(\alpha) + s_2(\beta) + s_3(\gamma) < s_1(\alpha') + s_2(\beta') + s_3(\gamma') = \phi(x')\), y \(\phi(x) \neq \phi(x')\).
+            Entonces \(\phi\) es inyectiva.
         \end{mathcase}
         \begin{mathcase}{\(\phi\) es sobreyectiva}
-            \vspace{-0.4cm}
-            Tome cualquier \(r \in R\), por definición de \(R\) existen \(i, j, l \in \realN\) tales que \(r = f_1(i) + f_2(j) + f_3(l)\),
-            como \(\realN = \omega\), entonces \(i, j, l \in \omega\). Luego, \((i,j,l) \in \omega^3\) y por definición de \(phi\), 
-            \(\phi(i, j, l) = f_1(i) + f_2(j) + f_3(l) = r\). Es decir, \(\phi\) es sobreyectiva.
+            \vspace{-3ex}
+            Sea \(r \in R\), entonces \(d_1 \leq r < d_{15}\),
+            sean \(r_1, r_2, r_3 \in R \cup \left\{0\right\}\) tales que \(r = r_1 + r_2 + r_3\). 
+            Ahora, apartir de \(d_i\) definamos a \(D_i := \left\{t \in R: d_{i} < t \leq d_{i+1}, \right\}\) para \(i = 1, \ldots 14\), y \(D_0 := {d_1}\).
+            Note que \(\bigcup_{i=0}^{14}D_i = R\), como \(r \in R\) veamos que existe almenos un \(j \in \left\{0, \dots, 14\right\}\) tal que \(r \in D_j\). 
+            Sin embargo, probemos primero que este \(j\) es único. Pero, esto es equivalente a probar que \(D_{j} \cap D_{j'} = \emptyset\)
+            para un \(j' \in \left\{1, \ldots, 14\right\}\) tal que \(j \neq j'\) y sin perdida de la generalidad, \(j < j'\).
+            \\
+            Primero, asuma que \(D_j \cap D_{j'} \neq \emptyset\) entonces existe \(q \in D_j\) y \(q \in D_{j'}\), si \(j > 0\), entonces 
+            \(d_j < q \leq d_{j+1}\) y \(d_j' < q \leq d_{j'+1}\). Si \(j' = j + 1\), entonces \(d_j < q \leq d_{j+1}\) y \(d_{j+1} < q \leq d_{j+2}\), absurdo.
+            Si \(j' > j + 1\), entonces \(d_j < q \leq d_{j+1}\) y \(d_{j} < d_{j+1} < d_{j'} < q \leq d_{j'+1}\), absurdo. 
+            Ahora, si \(j = 0\), entonces \(q = d_1\) y \(q \in D_{j'}\), independientemente de \(j'\) se va a tener que \(d_1 = q < d_j < q \leq d_{j+1}\), absurdo.
+            Para todo caso, se tiene que no existe \(q\) y por ende \(D_j \cap D_{j'} = \emptyset\). 
         \end{mathcase}
-        Concluyendo que \(\phi\) es un isomorfismo de orden entre \(\omega^3\) y \(R\), donde \(R \subset \realR\).
+            \\
+            Ahora, partiendo desde que \(r \in D_j\), si \(j = 0\), entonces \(r = d_1 = \sigma_1 + \sigma_2 + \sigma_3\), luego 
+            \(r_1 = \sigma_1, r_2 = \sigma_2, r_3 = \sigma_3\). Si \(j > 0\), entonces \(d_j < r \leq d_{j+1}\), note que para algunos \(a, b, c \in \omega\), 
+            se tiene que \(d_j < r \leq s_1(a) + s_2(b) + s_3(c) \leq d_{j+1}\). Si \(r = s_1(a) + s_2(b) + s_3(c)\), entonces \(r_1 = s_1(a), r_2 = s_2(b), r_3 = s_3(c)\).
+            Si \(d_{j} < r = r_1 + r_2 + r_3 < s_1(a) + s_2(b) + s_3(c)\), \textbf{entonces por el orden en \(R\), 
+            existen} \(a',b',c' \in \omega\) tales que \(d_j < r = s_1(a') + s_2(b') + s_3(c') < s_1(a) + s_2(b) + s_3(c) \leq d_{j+1}\).
+            Esto se puede ver mirando los conjuntos \(D_k\) con \(k = \left\{1, \ldots, 14\right\}\) ya que, por ejemplo, \(D_0, D_1, D_3, D_7\) son conjuntos \textbf{'finitos'}, y 
+            los conjuntos \(D_2, D_4, D_6, D_8\) son \textbf{'infinitos'}. Concluyendo que todo \(r \in R\) tiene imagen en \(\phi\), y \(\phi\) es una función sobreyectiva.
+        \\[0.5cm]
+        Ahora que sabemos que para unas funciones \(s_1: \omega \rightarrow \realR, s_2: \omega \rightarrow \realR, s_3: \omega \rightarrow \realR\) 
+        tales que \(s_1(n) < s_2(n) < s_3(n)\) para todo \(n \in \omega\),
+        que sean crecientes, acotadas, y cumplan con las propiedades~\eqref{eq-3} y~\eqref{eq-5}, 
+        van a poder formar un isomorfismo entre \(\omega^3\) y el conjunto de las sumas de sus cotas, que es un subconjunto en los reales.
+        Veamos un ejemplo
+        \[
+            \begin{aligned}
+                1 \leq s_1(a) = \sum_{n=0}^{a} \left(\frac{1}{2}\right){}^{n} < 2 &
+                \hspace{0.5cm}
+                3 \leq s_2(b) = \sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} < 6 &
+                \hspace{0.5cm}
+                10 \leq s_3(c) = \sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n} < 20
+            \end{aligned}
+        \]
+        Veamos que cumplen con~\eqref{eq-3} y~\eqref{eq-5} 
+        \[
+            \begin{aligned}
+                \Theta_1 + \gamma_2 = 2 + 3 = 5 &< \gamma_1 + s_2(1) = 1 + \frac{9}{2} = \frac{11}{2} \\
+                \Theta_1 + \Theta_2 + \gamma_3 = 2 + 6 + 10 = 18 &< \gamma_1 + \gamma_2 + s_3(1) = 1 + 3 + 15 = 19
+            \end{aligned}
+        \]
+        Entonces podemos definir a \(\phi: \omega^3 \rightarrow R\), donde \(R = \left[14, 28\right)\). El cual va a ser un isomorfismo entre \(\omega^3\) y \(R\).
+        Inclusive, podemos ver los intervalos \(d_i\), para \(i = \left\{1, \ldots, 15\right\}\) de \(\phi\).
+        \[
+            \begin{aligned}
+                &\sigma_1 + \sigma_2 + \sigma_3& &= 14 <& 
+                &s_1(1) + \sigma_2 + \sigma_3& &= \frac{29}{2} <& 
+                &\Theta_1 + \sigma_2 + \sigma_3& &= 15 < \\
+                &\sigma_1 + s_2(1) + \sigma_3& &= \frac{31}{2}<& 
+                &\sigma_1 + \Theta_2 + \sigma_3& &= 17<&
+                &s_1(1) + \Theta_2 + \sigma_3& &= \frac{35}{2}<\\
+                &\Theta_1 + \Theta_2 + \sigma_3& &= 18<&
+                &\sigma_1 + \sigma_2 + s_3(1)& &= 19<&
+                &\sigma_1 + \sigma_2 + \Theta_3& &= 24<\\
+                &s_1(1) + \sigma_2 + \Theta_3& &= \frac{49}{2}<&
+                &\Theta_1 + \sigma_2 + \Theta_3& &= 25<&
+                &\sigma_1 + s_2(1) + \Theta_3& &= \frac{51}{2}<\\
+                &\sigma_1 + \Theta_2 + \Theta_3& &= 27<&
+                &s_1(1) + \Theta_2 + \Theta_3& &= \frac{55}{2}<&
+                &\Theta_1 + \Theta_2 + \Theta_3& &= 28\\
+            \end{aligned}
+        \]
+        %Ahora, definamos la relación \(\sim \hspace{1ex} \subset \realN^3 \times \realN^3\) como, para algún \(a, b \in \realN^3\) y algún \(i = 2, ..., 14\)
+        %\[
+            %a \sim b 
+            %\iff
+            %(d_{1} = \phi(a) = \phi(b))
+            %\vee
+            %(d_{15} = \phi(a) = \phi(b))
+            %\vee
+            %\begin{cases}
+                %d_{i-1} < \phi(a) \leq \phi(b) < d_{i+1} \hspace{0.5cm} \text{Si } \phi(a) \leq \phi(b) \\
+                %d_{i-1} < \phi(b) < \phi(a) < d_{i+1} \hspace{0.5cm} \text{Si } \phi(b) < \phi(a) \\
+            %\end{cases}
+        %\]
+        %Debemos mostrar que existe un \(R \subset \realR\) tal que exista un isomorfismo de orden entre \(\omega^3\) y \(R\).
+        %\\
+        %\textbf{Respuesta: } 
+        %Tomando la serie geometrica 
+        %\(
+            %\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}
+        %\), 
+        %donde \(\left|r\right| < 1\) y \(k \in \realR\). Tal que para, \(k = 1, r = \frac{1}{2}\), se tiene que \(\sum_{n=0}^{\infty}\frac{1}{2^n} = \frac{1}{1 - \frac{1}{2}} = 2\).
+        %Ahora, sean las funciones \(f_1: \realN \rightarrow \realR, f_2: \realN \rightarrow \realR, f_3: \realN \rightarrow \realR\), tales que 
+        %\[
+            %\begin{aligned}
+                %f_1(a) = \sum_{n=0}^{a} \left(\frac{1}{2}\right){}^{n} &
+                %\hspace{0.5cm}
+                %f_2(b) = \sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} &
+                %\hspace{0.5cm}
+                %f_3(c) = \sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n}
+            %\end{aligned}
+        %\]
+        %Veamos que para \(i = 1, 2, 3\), si \(d_1, d_2 \in \realN\) tales que \(d_1 < d_2\), se va a tener que \(f_i(d_1) < f_i(d_2)\).
+        %Luego, como \(0 = \text{mín}\left(\realN\right)\), vamos a tener que para todo \(d \in \realN\), \(f_i(0) \leq f_i(d)\). 
+        %Además también se va a tener que 
+        %\[
+            %\begin{aligned}
+                %\lim_{a \rightarrow \infty} f_1(a) = \lim_{a \rightarrow \infty}\sum_{n=0}^{a} \frac{1}{2^{n}} = 2&
+                %\hspace{0.25cm}
+                %\lim_{b \rightarrow \infty} f_2(b) = \lim_{b \rightarrow \infty}\sum_{n=0}^{b} 3\left(\frac{1}{2}\right){}^{n} = 6
+                %\hspace{0.25cm}
+                %\lim_{c \rightarrow \infty} f_3(c) = \lim_{c \rightarrow \infty}\sum_{n=0}^{c} 10\left(\frac{1}{2}\right){}^{n} = 20
+            %\end{aligned}
+        %\]
+        %Entonces vamos a poder acotar cada función, tal que para todo \(m \in \realN\) 
+        %\[
+            %\begin{aligned}
+                %1 \leq f_1(m) < 2 &
+                %\hspace{0.5cm}
+                %3 \leq f_2(m) < 6 &
+                %\hspace{0.5cm}
+                %10 \leq f_3(m) < 20
+            %\end{aligned}
+        %\]
+        %Ahora, veamos que para todo \(m' \in \realN\) tal que \(m' > 0\),
+        %Ahora, definamos al conjunto \(R\), como \(R := \left\{f_1(i) + f_2(j) + f_3(l): i, j, l \in \realN \right\}\). 
+        %Es sencillo ver que \(R \subset \realR\) ya que \(\text{Im}(f_i) \subset \realR\) para \(i = 1, 2, 3\). 
+        %Ahora, sea una función \(\phi: \omega^3 \rightarrow R\), definida como
+        %\[
+            %\phi(\alpha, \beta, \gamma) = f_1(\alpha) + f_2(\beta) + f_3(\gamma)
+        %\]
+        %veamos que \(\phi\) es un isomorfismo entre \(\omega^3\) y \(R\).
+        %\ResetCases{}
+        %\begin{mathcase}{\(\phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\)}
+            %\vspace{-0.4cm}
+            %Primero, veamos que \(\phi\) es una función creciente, sean ordinales cualesquiera tales que,
+            %\((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\). Veamos que, como \(f_1, f_2, f_3\) son funciones crecientes, 
+            %\[
+                %\begin{aligned}
+                    %\phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) &=
+                    %(f_1(\alpha_2) + f_2(\beta_2) + f_3(\gamma_2)) + (- f_1(\alpha_1) - f_2(\beta_1) - f_3(\gamma_1)) \\
+                    %&= (f_1(\alpha_2) - f_1(\alpha_1)) + (f_2(\beta_2) - f_2(\beta_1)) + (f_3(\gamma_2) - f_3(\gamma_1)) \\
+                    %&> 0 + 0 + 0 = 0
+                %\end{aligned}
+            %\]
+            %Como \(\phi(\alpha_2, \beta_2, \gamma_2) - \phi(\alpha_1, \beta_2, \gamma_1) > 0\), entonces \(\phi(\alpha_2, \beta_2, \gamma_2) > \phi(\alpha_1, \beta_2, \gamma_1)\).
+            %De manera analoga se puede probar que \(phi\) es un homomorfismo de orden entre \(\omega^3\) y \(R\).
+        %\end{mathcase}
+        %\begin{mathcase}{\(\phi\) es inyectiva}
+            %\vspace{-0.4cm}
+            %Si 
+            %\(
+                %(\alpha_1, \beta_1, \gamma_1) \neq (\alpha_2, \beta_2, \gamma_2) 
+            %\), 
+            %sin perdida de la generalidad, veamos que \((\alpha_1, \beta_1, \gamma_1) < (\alpha_2, \beta_2, \gamma_2)\), 
+            %entonces, como \(f_1, f_2\), \(f_3\) y \(\phi\) son crecientes,
+            %se tiene que \(\phi(\alpha_1, \beta_1, \gamma_1) < \phi(\alpha_2, \beta_2, \gamma_2)\), 
+            %y \(\phi(\alpha_1, \beta_1, \gamma_1) \neq \phi(\alpha_2, \beta_2, \gamma_2)\).
+            %Es decir, \(\phi\) es inyectiva
+        %\end{mathcase}
+        %\begin{mathcase}{\(\phi\) es sobreyectiva}
+            %\vspace{-0.4cm}
+            %Tome cualquier \(r \in R\), por definición de \(R\) existen \(i, j, l \in \realN\) tales que \(r = f_1(i) + f_2(j) + f_3(l)\),
+            %como \(\realN = \omega\), entonces \(i, j, l \in \omega\). Luego, \((i,j,l) \in \omega^3\) y por definición de \(phi\), 
+            %\(\phi(i, j, l) = f_1(i) + f_2(j) + f_3(l) = r\). Es decir, \(\phi\) es sobreyectiva.
+        %\end{mathcase}
+        %Concluyendo que \(\phi\) es un isomorfismo de orden entre \(\omega^3\) y \(R\), donde \(R \subset \realR\).
 \end{itemize}
 
 \end{document}

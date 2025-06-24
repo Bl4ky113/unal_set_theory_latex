@@ -17,6 +17,7 @@ headheight=22pt%
 
 \usepackage{booktabs} % Tables+ Package
 \usepackage[inline]{enumitem} % Enumarete+ Package
+\usepackage{multicol} % Fancier Enumaretes++ Package
 \usepackage{xparse} % Command Args Split Package
 
 \usepackage{mathtools} % Math General
@@ -100,7 +101,7 @@ headheight=22pt%
 % Enumerate Lists types
 \newcommand\SetItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
 \newcommand{\listSubscript}[2]{\(#1_{#2}\)}
-\newcommand{\listAlph}{\alph*.}
+\newcommand{\listAlp}{\alph*.}
 \newcommand{\listALPH}{\Alph*.}
 
 % Fast Supper and Sub -scripts
@@ -142,4 +143,11 @@ headheight=22pt%
     \left\{%
         #1 %
     \right\}%
+}
+
+% Fast Image 
+\NewDocumentCommand{\fim}{m} {%
+    \text{Im}\left(%
+        #1%
+    \right)%
 }

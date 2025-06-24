@@ -1,6 +1,6 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.31)  19 JUN 2025 07:49
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2025.3.31)  24 JUN 2025 11:55
  restricted system commands enabled.
-**main.tex xx
+**main.tex
 (./main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -558,15 +558,85 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count315
 \enitdp@description=\count316
 )
+(/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count317
+\mult@box=\box75
+\multicol@leftmargin=\dimen283
+\c@unbalance=\count318
+\c@collectmore=\count319
+\doublecol@number=\count320
+\multicoltolerance=\count321
+\multicolpretolerance=\count322
+\full@width=\dimen284
+\page@free=\dimen285
+\premulticols=\dimen286
+\postmulticols=\dimen287
+\multicolsep=\skip86
+\multicolbaselineskip=\skip87
+\partial@page=\box76
+\last@line=\box77
+\mc@boxedresult=\box78
+\maxbalancingoverflow=\dimen288
+\mult@rightbox=\box79
+\mult@grightbox=\box80
+\mult@firstbox=\box81
+\mult@gfirstbox=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\c@minrows=\count323
+\c@columnbadness=\count324
+\c@finalcolumnbadness=\count325
+\last@try=\dimen289
+\multicolovershoot=\dimen290
+\multicolundershoot=\dimen291
+\mult@nat@firstbox=\box119
+\colbreak@box=\box120
+\mc@col@check@num=\count326
+)
 (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2025-01-18 L3 programming layer (loader) 
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2024-05-08 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count317
+\l__color_backend_stack_int=\count327
 Inserting `l3color' in `luaotfload.parse_color'.
-\l__pdf_internal_box=\box75
+\l__pdf_internal_box=\box121
 ))
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
@@ -576,17 +646,17 @@ Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
 (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count318
-\l_MT_multwidth_dim=\dimen283
-\origjot=\skip86
-\l_MT_shortvdotswithinadjustabove_dim=\dimen284
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen285
-\l_MT_above_intertext_sep=\dimen286
-\l_MT_below_intertext_sep=\dimen287
-\l_MT_above_shortintertext_sep=\dimen288
-\l_MT_below_shortintertext_sep=\dimen289
-\xmathstrut@box=\box76
-\xmathstrut@dim=\dimen290
+\g_MT_multlinerow_int=\count328
+\l_MT_multwidth_dim=\dimen292
+\origjot=\skip88
+\l_MT_shortvdotswithinadjustabove_dim=\dimen293
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen294
+\l_MT_above_intertext_sep=\dimen295
+\l_MT_below_intertext_sep=\dimen296
+\l_MT_above_shortintertext_sep=\dimen297
+\l_MT_below_shortintertext_sep=\dimen298
+\xmathstrut@box=\box122
+\xmathstrut@dim=\dimen299
 )
 (/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
@@ -595,9 +665,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks43
 \thm@notefont=\toks44
 \thm@headpunct=\toks45
-\thm@preskip=\skip87
-\thm@postskip=\skip88
-\thm@headsep=\skip89
+\thm@preskip=\skip89
+\thm@postskip=\skip90
+\thm@headsep=\skip91
 \dth@everypar=\toks46
 )
 (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math.sty
@@ -616,20 +686,20 @@ Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count319
-\l__fontspec_language_int=\count320
-\l__fontspec_strnum_int=\count321
-\l__fontspec_tmp_int=\count322
-\l__fontspec_tmpa_int=\count323
-\l__fontspec_tmpb_int=\count324
-\l__fontspec_tmpc_int=\count325
-\l__fontspec_em_int=\count326
-\l__fontspec_emdef_int=\count327
-\l__fontspec_strong_int=\count328
-\l__fontspec_strongdef_int=\count329
-\l__fontspec_tmpa_dim=\dimen291
-\l__fontspec_tmpb_dim=\dimen292
-\l__fontspec_tmpc_dim=\dimen293
+\l__fontspec_script_int=\count329
+\l__fontspec_language_int=\count330
+\l__fontspec_strnum_int=\count331
+\l__fontspec_tmp_int=\count332
+\l__fontspec_tmpa_int=\count333
+\l__fontspec_tmpb_int=\count334
+\l__fontspec_tmpc_int=\count335
+\l__fontspec_em_int=\count336
+\l__fontspec_emdef_int=\count337
+\l__fontspec_strong_int=\count338
+\l__fontspec_strongdef_int=\count339
+\l__fontspec_tmpa_dim=\dimen300
+\l__fontspec_tmpb_dim=\dimen301
+\l__fontspec_tmpc_dim=\dimen302
 
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -647,9 +717,9 @@ Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
 h LuaLaTeX
 Lua module: lualatex-math 2013/08/03 v1.3 Patches for mathematics typesetting wi
 th LuaLaTeX)
-\g__um_fam_int=\count330
-\g__um_fonts_used_int=\count331
-\l__um_primecount_int=\count332
+\g__um_fam_int=\count340
+\g__um_fonts_used_int=\count341
+\l__um_primecount_int=\count342
 \g__um_primekern_muskip=\muskip18
 
 (/usr/share/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
@@ -657,7 +727,7 @@ th LuaLaTeX)
 Package: polyglossia 2025/01/31 v2.4 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
 Lua module: polyglossia 2013/05/11 v1.3 Polyglossia
-\l_xpg_alias_keyvals_int=\count333
+\l_xpg_alias_keyvals_int=\count343
 
 (/usr/share/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
 File: gloss-latex.ldf polyglossia: module for default language
@@ -682,7 +752,7 @@ Package polyglossia Warning: No hyphenation patterns were loaded for `spanish'
 
 Package polyglossia Info: Default language is spanish
 
-\c@TMPMathCases=\count334
+\c@TMPMathCases=\count344
 ) (./main.aux)
 \openout1 = main.aux
 
@@ -704,16 +774,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
-\scratchdimen=\dimen294
-\scratchbox=\box77
-\nofMPsegments=\count336
-\nofMParguments=\count337
+\scratchcounter=\count345
+\scratchdimen=\dimen303
+\scratchbox=\box123
+\nofMPsegments=\count346
+\nofMParguments=\count347
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count338
-\MPscratchDim=\dimen295
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen304
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -758,6 +828,20 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+Package extramarks Warning: You are using package `extramarks' with a version
+(extramarks)                of `multicol' that is too old. The new version
+(extramarks)                of `multicol' will be released on June 1, 2025.
+(extramarks)                We will fallback to extramarks version 4 now..
+
+(/usr/share/texmf-dist/tex/latex/fancyhdr/extramarks-v4.sty
+
+LaTeX Warning: You have requested package `extramarks-v4',
+               but the package provides `extramarks'.
+
+Package: extramarks 2024/11/30 v4.5 Legacy version of extramarks for LaTeX
+LaTeX Info: Redefining \markboth on input line 36.
+)
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 15.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
@@ -891,6 +975,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
 t line 15.
 
+
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
 (unicode-math)                 
@@ -938,7 +1023,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--17
- \TU/lmr/m/n/10 19 de junio de 2025 
+ \TU/lmr/m/n/10 24 de junio de 2025 
  []
 
 
@@ -951,7 +1036,10 @@ Overfull \hbox (14.99998pt too wide) in paragraph at lines 17--17
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./src/unal_logo.pdf>]
-(./main.aux)
+
+[2]
+
+[3] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -959,15 +1047,15 @@ L3 programming layer <2025-01-18>
 )
 
 Here is how much of LuaTeX's memory you used:
- 24543 strings out of 475506
+ 24729 strings out of 475506
  100000,1373583 words of node,token memory allocated
- 619 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 14 attribute, 72 glue_spec
-, 14 attribute_list, 2 write nodes
-   avail lists: 2:926,3:267,4:38,5:478,6:60,7:6624,8:73,9:1164,10:7
- 47037 multiletter control sequences out of 65536+600000
- 40 fonts using 11462871 bytes
- 103i,11n,103p,457b,383s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 660 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 16 attribute, 75 glue_spec
+, 16 attribute_list, 2 write nodes
+   avail lists: 2:1528,3:467,4:44,5:591,6:43,7:9474,8:40,9:2108,10:13,11:2
+ 47213 multiletter control sequences out of 65536+600000
+ 40 fonts using 11462911 bytes
+ 103i,12n,103p,454b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share
 /texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></usr/share/texmf
 -dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/o
@@ -977,10 +1065,10 @@ ic/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmro
 man9-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regul
 ar.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmromanslant17-regular.ot
 f></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf>
-Output written on main.pdf (1 page, 385219 bytes).
+Output written on main.pdf (3 pages, 399272 bytes).
 
-PDF statistics: 82 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+PDF statistics: 88 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
