@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\def\TemplatePath{../}
+\input{../template.tex}
+
+\usepackage{biblatex}
+    \addbibresource{./references.bib}
+
+\usepackage{tikz}
+    \usetikzlibrary{calc}
+
+\definecolor{area}{rgb}{0.6,0.4,0.8}
+
+\def\MyClass{Introducción a la Teoria de Conjuntos}
+\def\MyTitle{Hrbacek, Jech-Ejercicios}
+\def\MyAuthor{Martín Steven Hernández Ortiz}
+\def\MyEmail{mahernandezor@unal.edu.co}
+\def\MyDate{\today}
+
+\newcommand{\fp}{\symscr{P}}
+
+\begin{document}
+\maketitle{}
+Ejercicios tomados de la sección 1 del capitulo 4, en el libro~\cite{hrbacek_introduction_1999}.
+
+\begin{definition}
+    Una función \(F: \fps{A} \rightarrow \fps{A}\) es \textbf{monótona} 
+    si \(X \subseteq Y \subseteq A\) implica que \(F(X) \subseteq F(Y)\).
+\end{definition}
+\begin{definition}
+    Para una función \(F: \fps{A} \rightarrow \fps{A}\), 
+    \(X \subseteq A\) es un \textbf{punto fijo de \(F\)} si \(F(X) = X\).
+\end{definition}
+\begin{enumerate}[label=1.\arabic*,start=10,ref=(1.\arabic*)]
+    \input{pt1_10.tex}\label{pt1_10}
+    \input{pt1_11.tex}\label{pt1_11}
+    \input{pt1_12.tex}\label{pt1_12}
+\end{enumerate}
+\begin{definition}
+    Una función \(F: \fps{A} \rightarrow \fps{A}\) es \textbf{continua} si \(F\left(\bigcup_{i \in \omega} X_i\right) = \bigcup_{i \in \omega} F(X_i)\)
+    para cualquier secuencia no-decreciente de subconjuntos de \(A\), \(\left\langle X_k \subseteq A: k \in \omega \right\rangle\), 
+    donde si \(i \leq j\) entonces \(X_i \subseteq X_j\)
+\end{definition}
+\begin{enumerate}[label=1.\arabic*,start=13,ref=(1.\arabic*)]
+    \input{pt1_13.tex}\label{pt1_13}
+    \input{pt1_14.tex}\label{pt1_14}
+    %\input{ptextra.tex}\label{ptextra}
+\end{enumerate}
+    \printbibliography{}
+\end{document}

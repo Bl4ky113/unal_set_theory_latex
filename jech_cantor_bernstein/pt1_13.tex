@@ -1,0 +1,18 @@
+\item Pruebe que la función \(F\) usada en el ejercicio~\ref{pt1_11} es continua. \\
+    Primero probemos que para una función \(f\) cualquiera, \(f\left(\cup_{a \in A} X_a\right) = \cup_{a \in A} f\left(X_a\right)\).
+    Sea \(y \in f\left(\cup_{a \in A} X_a\right)\), entonces existe \(x \in \cup_{a \in A} X_a\) tal que \(f(x) = y\), 
+    luego existe \(a \in A\) tal que \(x \in X_a\), es decir existe \(a \in A\) tal que \(y \in f(X_a)\), lo que es equivalente a
+    \(\cup_{a \in A} f(X_a)\). Si \(y \in \cup_{a \in A} f(X_a)\) se puede seguir un argumento similar. 
+    Probando que \(f\left(\cup_{a \in A} X_a\right) = \cup_{a \in A} f\left(X_a\right)\). \\
+    Ahora, para que \(F\) sea continua se debe probar que para cualquier secuencia no-decreciente de subconjuntos de \(A\) se debe tener que
+    \[
+        \begin{aligned}
+            F\left(\bigcup_{n \in \omega} X_n\right) 
+                &= (A - B) \cup f\left(\bigcup_{n \in \omega} X_n\right) \\
+                &= (A - B) \cup \bigcup_{n \in \omega} f\left(X_n\right) \\
+                &= \bigcup_{n \in \omega} \left((A - B) \cup f\left(X_n\right)\right) \\
+                &= \bigcup_{n \in \omega} F\left(X_n\right)
+        \end{aligned}
+    \]
+    Entonces \(F\) es una función continua.\qed{}
+

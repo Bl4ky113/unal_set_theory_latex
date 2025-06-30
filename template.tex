@@ -133,6 +133,17 @@ headheight=22pt%
     }
 } {}
 
+% Definitions
+\newtheorem{TMPMathDefinition}{Definición}
+\NewDocumentEnvironment{definition}{+b} {%
+    \begin{tcolorbox}[left=0mm,right=0mm]%
+        \begin{TMPMathDefinition}%
+            #1 %
+            \hspace{\fill}\(\bigtriangleup\)%
+        \end{TMPMathDefinition}%
+    \end{tcolorbox}%
+} {}
+
 % Fast Function
 \NewDocumentCommand{\ffunc}{mm} {%
     #1\left(#2\right)
@@ -150,4 +161,16 @@ headheight=22pt%
     \text{Im}\left(%
         #1%
     \right)%
+}
+
+% Fast Power Set
+\NewDocumentCommand{\fps}{m} {%
+    \symscr{P}\left(%
+        #1%
+    \right)%
+}
+
+% Fast Cardinal
+\NewDocumentCommand{\fcard}{m} {%
+    \left|#1\right|
 }

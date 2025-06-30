@@ -1,0 +1,32 @@
+\item Pruebe que si \(\hat{X}\) es el menor punto fijo de una función monótona y continua, \(F: \fps{A} \rightarrow \fps{A}\), 
+    entonces \(\hat{X} = \bigcup_{i \in \omega} X_i\), donde se define recursivamente \(X_0 = \emptyset, X_{i+1} = F(X_i)\). \\
+    Primero, veamos que la sucesión \(S = \left\langle X_i \subseteq A: i \in \omega \right\rangle\) es no-decreciente mediante inducción sobre \(i\).
+    \vspace{-1ex}
+    \begin{enumerate}
+        \item[(0)] \(X_0 = \emptyset \subseteq X_i\) para todo \(i \in \omega\).
+        \item[\((n \Rightarrow n + 1)\)] Asuma que \(X_n \subseteq X_{n+1} = F(X_n)\), veamos que 
+            \(X_{n + 1} = F(X_n) \subseteq F(X_{n+1}) = X_{n+2}\) ya que \(F\) es monótona. Entonces \(X_{i} \subseteq X_{i + 1}\) para todo \(i \in \omega\).
+    \end{enumerate}
+    Concluimos que la sucesión \(S\) es no-decreciente, entonces \(F\) va a ser continua para \(S\). 
+    Ahora, veamos que \(\ddot{X} = \cup_{i \in \omega} X_i\) es un punto fijo de \(F\)
+    \[
+        \begin{aligned}
+            F(\bigcup_{i \in \omega} X_i) 
+                &= \bigcup_{i \in \omega} F(X_i) \\
+                &= F(X_0) \cup F(X_1) \cup F(X_2) \cup \cdots \\
+                &= X_1 \cup X_2 \cup X_3 \cup \cdots \\
+                &= \bigcup_{i \in \omega} X_i
+        \end{aligned}
+    \]
+    Ahora, veamos que \(\ddot{X}\) es el menor punto fijo de \(F\). 
+    Para eso debemos probar que para todo \(i \in \omega\), se tenga que \(X_i \subseteq X\),
+    donde \(X\) es un punto fijo cualquiera de \(F\), probemos esto mediante inducción sobre \(i\).
+    \vspace{-1ex}
+    \begin{enumerate}
+        \item[(0)] \(X_0 = \emptyset \subseteq X\).
+        \item[\((n \Rightarrow n + 1)\)] Asuma que \(X_n \subseteq X \subseteq A\), luego como \(F\) es monótona, 
+            \(F(X_n) = X_{n+1} \subseteq F(X)\), y como \(X\) es un punto fijo, entonces \(X_{n+1} \subseteq X\).
+    \end{enumerate}
+    Entonces \(\ddot{X} = \bigcup_{i \in \omega} X_i \subseteq X\).
+    Note que si \(\hat{X}\) es también el menor punto fijo de \(F\), entonces \(\hat{X} \subseteq \ddot{X}\) y \(\ddot{X} \subseteq \hat{X}\), 
+    es decir \(\hat{X} = \ddot{X} = \bigcup_{i \in \omega} X_i\).\qed{}

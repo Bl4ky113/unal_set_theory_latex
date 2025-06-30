@@ -1,0 +1,59 @@
+\item Usando el ejercicio~\ref{pt1_10}, pruebe el \emph{Teorema de Cantor-Bernstein}. \\
+    Debemos probar que si \(\fcard{X} < \fcard{Y}\) y \(\fcard{Y} < \fcard{X}\) entonces \(\fcard{X} = \fcard{Y}\). 
+    Sean \(f: X \rightarrow Y\) y \(g: Y \rightarrow X\), funciones inyectivas.
+    Primero, considere \(g \circ f: X \rightarrow X\), luego \((g \circ f)(X) \subseteq g(Y) \subseteq X\), y note que \(\fcard{X} = \fcard{(g \circ f)(X)}\) y \(\fcard{Y} = \fcard{g(Y)}\).
+    Vamos a notar \(A = X\), \(A_1 = (g \circ f)(X)\) y \(B = g(Y)\). \\
+    Ahora, Sean \(\overline{f}: A \rightarrow A_1\) una función biyectiva, y \(F: \fps{A} \rightarrow \fps{A}\) una función, 
+    definida como \(x \mapsto (A - B) \cup \overline{f}(x)\), veamos que \(F\) es monótona.
+    Como \(A_1 \subseteq B \subseteq A\),
+    veamos para un \(a \in F(A)\) cualquiera, entonces 
+    \[
+        \begin{aligned}
+            &\phantom{\Rightarrow} a \in (A - B) \cup \overline{f}(A_1) \\
+            &\Rightarrow a \in (A - B) \vee a \in \overline{f}(A_1) \\
+            &\Rightarrow (a \in A \wedge a \not\in B) \vee (a \in \overline{f}(A_1))
+        \end{aligned}
+    \]
+    Si \(a \in A\) y \(a \not\in B\), entonces \(a \in (A - B) \cup \overline{f}(B) = F(B)\).
+    Si \(a \in \overline{f}(A_1)\), como \(A_1 \subseteq B\), entonces \(\overline{f}(A_1) \subseteq \overline{f}(B)\), 
+    y \(a \in (A - B) \cup \overline{f}(B) = F(B)\). Concluyendo que \(F(A_1) \subseteq F(B)\). \\
+    Como \(F\) es monótona, por~\ref{pt1_10} tiene un punto fijo \(C \subseteq A\), tal que \(F(C) = (A - B) \cup \overline{f}(C) = C\), y sea \(D = A - C\), 
+    definamos a \(G: A \rightarrow B\), como 
+    \[
+        G(x) = 
+        \begin{cases}
+            \overline{f}(x) & \text{Si } x \in C \\
+            x & \text{Si } x \in D
+        \end{cases}
+    \]
+    Primero, veamos que \(G \upharpoonright C\) es una función inyectiva. Sean \(x, x' \in C\) tales que \(G(x) = G(x')\), 
+    entonces \(G(x) = \overline{f}(x) = \overline{f}(x') = G(x')\), como \(\overline{f}\) es inyectiva, se tiene que \(x = x'\).
+    Ahora, veamos que \(G \upharpoonright D\) es una función inyectiva también. Sean \(x, x' \in D\) tales que \(G(x) = G(x')\),
+    entonces \(G(x) = x = x' G(x')\). \\
+    Como \(G \upharpoonright C\) y \(G \upharpoonright D\) son inyectivas, para que \(G\) también sea inyectiva, 
+    se debe tener que \(\fim{G \upharpoonright C} \cap \fim{G \upharpoonright D} = \emptyset\). Asuma que \(\fim{G \upharpoonright C} \cap \fim{G \upharpoonright D} \neq \emptyset\),
+    entonces existe \(y \in \fim{G \upharpoonright C} \cap \fim{G \upharpoonright D}\), 
+    tal que existen \(x \in C\) y \(x' \in D\) tales que \(G(x) = \overline{f}(x) = y = x' = G(x')\).
+    Pero antes, note que \(x' \in D = A - C\), entonces 
+    \[
+        \begin{aligned}
+            &\phantom{\Rightarrow} x' \in A - \left((A - B) \cup \overline{f}(C)\right) \\
+            &\Rightarrow \left(x' \in \left(A - (A - B)\right)\right) \wedge \left(x' \in \left(A - \overline{f}(C)\right)\right) \\
+            &\Rightarrow \left(x' \in (A - A) \vee x' \in (A \cap B)\right) \wedge \left(x' \in \left(A - \overline{f}(C)\right)\right) \\
+            &\Rightarrow x' \in B \cap (A - \overline{f}(C)) \\
+            &\Rightarrow x' \in B - \overline{f}(C)
+        \end{aligned}
+    \]
+    Esto se tiene ya que \(\overline{f}(C) \subseteq A_1 \subseteq B \subseteq A\).
+    Luego, \(x' = y \not\in \overline{f}(C)\), pero \(y = \overline{f}(x) \in \overline{f}(C)\); Absurdo. 
+    Entonces no existe puede existir \(y\) y \(\fim{G \upharpoonright C} \cap \fim{G \upharpoonright D} = \emptyset\), es decir, \(G\) es inyectiva. \\
+    Ahora, veamos que \(G\) es sobreyectiva. Entonces, debemos probar que \(\fim{G \upharpoonright C} \cup \fim{G \upharpoonright D} = B\)
+    \[
+        \begin{aligned}
+            \fim{G \upharpoonright C} \cup \fim{G \upharpoonright D}
+                &= \overline{f}(C) \cup D \\
+                &= \overline{f}(C) \cup \left(B - \overline{f}(C)\right) \\
+                &= B
+        \end{aligned}
+    \]
+    Concluyendo que \(G\) es una biyección entre \(A = X\) y \(B = g(Y)\), es decir \(\fcard{X} = \fcard{Y}\).\qed{}

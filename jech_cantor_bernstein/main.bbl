@@ -1,0 +1,65 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{hrbacek_introduction_1999}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=6465960b7a58b8c6c880f14ff897bd3d}{%
+           family={Hrbacek},
+           familyi={H\bibinitperiod},
+           given={Karel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=b8ddd852d7bc9bcd5d92f6c9c3251005}{%
+           family={Jech},
+           familyi={J\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {{CRC} Press}%
+      }
+      \strng{namehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{fullhash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{fullhashraw}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{bibnamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authorbibnamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authornamehash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authorfullhash}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \strng{authorfullhashraw}{033c8adfeb3ffa2b7118cd418b5748e4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Thoroughly revised, updated, expanded, and reorganized to serve as a primary text for mathematics courses, Introduction to Set Theory, Third Edition covers the basics: relations, functions, orderings, finite, countable, and uncountable sets, and cardinal and ordinal numbers. It also provides five additional self-contained chapters, consolidates the material on real numbers into a single updated chapter affording flexibility in course design, supplies end-of-section problems, with hints, of varying degrees of difficulty, includes new material on normal forms and Goodstein sequences, and adds important recent ideas including filters, ultrafilters, closed unbounded and stationary sets, and partitions.}
+      \field{day}{22}
+      \field{isbn}{978-0-8247-7915-3}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{note}{Google-Books-{ID}: Er1r0n7VoSEC}
+      \field{pagetotal}{320}
+      \field{title}{Introduction to Set Theory, Third Edition, Revised and Expanded}
+      \field{year}{1999}
+      \field{dateera}{ce}
+      \keyw{Mathematics / Set Theory}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

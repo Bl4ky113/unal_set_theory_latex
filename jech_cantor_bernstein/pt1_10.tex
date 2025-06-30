@@ -1,0 +1,8 @@
+\item Sea \(F: \fps{A} \rightarrow \fps{A}\), una función monótona. Entonces \(F\) tiene un punto fijo. \\
+    Primero, sea \(T = \fset{ X \subseteq A : F(X) \subseteq X}\). Note que \(T \neq \emptyset\), ya que \(A \in T\).
+    Ahora, sea \(\hat{X} = \cap T\), entonces para todo \(t \in T\) se tiene que \(\hat{X} \subseteq t \subseteq A\),
+    como \(F(t) \subseteq t\), y como \(F\) es monótona \(F(\hat{X}) \subseteq F(t)\), 
+    luego \(F(\hat{X}) \subseteq F(t) \subseteq \hat{X} \subseteq t\), es decir \(F(\hat{X}) \subseteq \hat{X}\) y \(\hat{X} \in T\).
+    Ahora, de manera similar, \(F(\hat{X}) \subseteq \hat{X} \subseteq A\), entonces \(F(F(\hat{X})) \subseteq F(\hat{X})\) y \(F(\hat{X}) \in T\).
+    Como \(\hat{X} = \cap T\), entonces \(\hat{X} \subseteq F(\hat{X})\), pero como \(F(\hat{X}) \subseteq \hat{X}\), 
+    se tiene que \(\hat{X} = F(\hat{X})\), donde \(\hat{X} \in A\).\qed{}

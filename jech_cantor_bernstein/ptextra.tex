@@ -1,0 +1,38 @@
+\item[(extra)] Compare la prueba del \emph{Lemma \(1.7\)} usado para probar el \emph{Teorema de Cantor-Bernstein} en~\cite{hrbacek_introduction_1999} 
+    con la construcción del menor punto fijo, \(\hat{X}\), de \(F(X) = (A - B) \cup \overline{f}(X)\) en el ejercicio~\ref{pt1_14}. \\
+    Si construyeramos el menor punto fijo \(\hat{X}\) de \(F\), como se hizo en el ejercicio~\ref{pt1_14}. 
+    Veamos algunos terminos de la sucesión \(S\) de subconjuntos de \(A\) 
+    \[
+        \begin{aligned}
+            X_0 &= \emptyset \\
+            X_1 &= F(X_0) = (A - B) \cup \overline{f}(\emptyset) = (A - B) \\
+            X_2 &= F(X_1) = (A - B) \cup \overline{f}(X_1) = (A - B) \cup \overline{f}((A - B)) \\
+            X_3 &= F(X_2) = (A - B) \cup \overline{f}(X_2) = (A - B) \cup \overline{f}((A - B) \cup \overline{f}((A - B))) \\
+            & \hspace{0.5ex} \vdots \\
+            X_{i + 1} &= F(X_i) = (A - B) \cup \overline{f}(X_i)
+        \end{aligned}
+    \]
+    Primero, note que no es tan fácil de ver que esta pasando dentro de \(\overline{f}\) para cada iteración de \(i\).
+    Creo que es mejor mirar un dibujo sobre los terminos de \(S\). 
+    \\[0.5cm]
+    \begin{tikzpicture}
+        \draw[blue,line width=1, fill=area] (0,0) circle[radius=2] (0, 1.75) node[black] {\(A\)};
+        \draw[red,line width=1, fill=white] (0,0) circle[radius=1.25] (0, 1) node[black] {\(B\)};
+        \draw (0,-2.35) node {\(X_1\)};
+    \end{tikzpicture}
+    \hspace{0.5cm}
+    \begin{tikzpicture}
+        \draw[blue,line width=1, fill=area] (0,0) circle[radius=2] (0, 1.75) node[black] {\(A\)};
+        \draw[red,line width=1, fill=white] (0,0) circle[radius=1.25] (0, 1) node[black] {\(B\)};
+        \draw[black,line width=1, fill=white] (0,0) circle[radius=0.85] (1, 0) node[black] {\(A_1\)};
+        \draw[blue,line width=1, fill=area] (0,0) circle[radius=0.55] (0, 0) node[black] {\(\overline{f}(X_1)\)};
+        \draw (0,-2.35) node {\(X_2\)};
+    \end{tikzpicture}
+    \hspace{0.5cm}
+    \begin{tikzpicture}
+        \draw[blue,line width=1, fill=area] (0,0) circle[radius=2] (0, 1.75) node[black] {\(A\)};
+        \draw[red,line width=1, fill=white] (0,0) circle[radius=1.25] (0, 1) node[black] {\(B\)};
+        \draw[black,line width=1, fill=white] (0,0) circle[radius=0.85] (1, 0) node[black] {\(A_1\)};
+        \draw[blue,line width=1, fill=area] (0,0) circle[radius=0.65] (0, 0) node[black] {\(\overline{f}(X_2)\)};
+        \draw (0,-2.35) node {\(X_3\)};
+    \end{tikzpicture}
